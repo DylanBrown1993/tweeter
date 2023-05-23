@@ -1,29 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- App CSS -->
+  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/nav.css"/>
+  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/header.css"/>
+  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/new-tweet.css"/>
+  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/tweet.css"/> 
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="../../tweeter/public/scripts/client.js"></script>
+  <script type="text/javascript" src="../../tweeter/public/scripts/composer-char-counter.js"></script> 
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="logo">tweeter</span>
+    <span class="tweet-button">
+      <span class="tweet-text"><strong>Write </strong>a new tweet</span>
+      <span class="icon-wrapper">
+        <i class="fa-solid fa-angles-down" style="color: #ff8800;"></i>
+      </span>
+    </span>
+  </nav>
+  <header class="header">
+    <div>
+      <img src="../../tweeter/public/images/profile-hex.png" class="header-image"> 
+    </div>
+    <div>
+      <h2 class="header-text">Dylan Brown</h2>
+    </div>
+  </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <form>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+        <form action="/tweets" method="POST" id="submit-tweet"></form>
+      </form>
+    </section>
+  </main>
+
+  <div class="tweet-container">
+    <article class="tweet">
+      <header>
+        <img src="path/to/profile-picture.jpg" alt="Profile Picture">
+        <div class="tweet-header-content">
+          <div>
+            <h3 class="tweet-author">John Doe</h3>
+          </div>
+          <div>
+            <span class="tweet-handle">@johndoe</span>
+          </div>
+        </div>
+      </header>
+      <div class="tweet-content">
+        <p>This is an example of a tweet</p>
+      </div>
+      <footer>
+        <span class="tweet-timestamp">May 23, 2023 12:34 PM</span>
+        <div class="tweet-actions">
+          <i class="far fa-comment"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="far fa-heart"></i>
+        </div>
+      </footer>
+    </article>
+  </div>
+</body>
 </html>

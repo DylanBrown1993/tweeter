@@ -1,0 +1,71 @@
+.tweet {
+  background-color: inherit;
+  display: inherit;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 4px solid #53555c;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tweet header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 10px;
+  color: #53555c;
+}
+
+.tweet header .tweet-author {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #53555c;
+}
+
+.tweet header .tweet-handle {
+  color: #53555c;
+  margin-left: 10px;
+}
+
+.tweet .tweet-content {
+  margin-bottom: 10px;
+  color: #53555c; 
+  font-weight: 600;
+}
+
+.tweet .tweet-content p {
+  margin: 0;
+  color: #53555c; 
+
+}
+
+.tweet footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet .tweet-timestamp {
+  color: #53555c; 
+}
+
+.tweet .tweet-actions i {
+  margin-right: 10px;
+  color: #53555c; 
+  cursor: pointer;
+}
+
+.tweet:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.tweet:hover .tweet-actions i {
+  color: #53555c;
+}
+
+.tweet:hover .tweet-actions i:hover {
+  color: #d18b00;
+}
