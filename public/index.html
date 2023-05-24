@@ -11,23 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/layout.css"/>
-  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/nav.css"/>
-  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/header.css"/>
-  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/new-tweet.css"/>
-  <link rel="stylesheet" type="text/css" href="../../tweeter/public/styles/tweet.css"/> 
+  <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/nav.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/header.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/tweet.css"/> 
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/timeago.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="../public/scripts/client.js"></script>
-  <script type="text/javascript" src="../public/scripts/composer-char-counter.js"></script> 
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script> 
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- Top nav bar -->
   <nav>
     <span class="logo">tweeter</span>
     <span class="tweet-button">
@@ -39,7 +40,7 @@
   </nav>
   <header class="header">
     <div>
-      <img src="../../tweeter/public/images/profile-hex.png" class="header-image"> 
+      <img src="/images/profile-hex.png" class="header-image"> 
     </div>
     <div>
       <h2 class="header-text">Dylan Brown</h2>
@@ -49,13 +50,12 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <form>
+      <form action="/tweets" method="POST" id="submit-tweet">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
-          <button type="submit">Tweet</button>
+          <button type="submit" id="submit-tweet-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
-        <form action="/tweets" method="POST" id="submit-tweet"></form>
       </form>
     </section>
   </main>
