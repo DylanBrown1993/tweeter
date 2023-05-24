@@ -96,12 +96,6 @@ $(document).ready(function() {
   // Function to format timestamp using timeago
   const formatTimestamp = function(timestamp) {
     const date = new Date(timestamp);
-    const formattedDate = `${padZero(date.getDate())}/${padZero(date.getMonth() + 1)}/${padZero(date.getFullYear() % 100)} - ${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
-    return formattedDate;
-  };
-
-  // Function to pad zero for single-digit numbers
-  const padZero = function(num) {
-    return String(num).padStart(2, '0');
+    return date.toISOString();
   };
 });
