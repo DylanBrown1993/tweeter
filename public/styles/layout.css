@@ -17,7 +17,7 @@ html {
 
 body {
   color: #ffffff;
-  background-color: #dad3c3;
+  background-color: #f0ece3;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -36,7 +36,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dad3c3;
+  background-color: #f0ece3;
 }
 
 .counter.invalid {

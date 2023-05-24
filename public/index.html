@@ -19,10 +19,11 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="../../tweeter/public/scripts/client.js"></script>
-  <script type="text/javascript" src="../../tweeter/public/scripts/composer-char-counter.js"></script> 
+  <script type="text/javascript" src="../public/scripts/client.js"></script>
+  <script type="text/javascript" src="../public/scripts/composer-char-counter.js"></script> 
 </head>
 
 <body>
@@ -59,31 +60,7 @@
     </section>
   </main>
 
-  <div class="tweet-container">
-    <article class="tweet">
-      <header>
-        <img src="path/to/profile-picture.jpg" alt="Profile Picture">
-        <div class="tweet-header-content">
-          <div>
-            <h3 class="tweet-author">John Doe</h3>
-          </div>
-          <div>
-            <span class="tweet-handle">@johndoe</span>
-          </div>
-        </div>
-      </header>
-      <div class="tweet-content">
-        <p>This is an example of a tweet</p>
-      </div>
-      <footer>
-        <span class="tweet-timestamp">May 23, 2023 12:34 PM</span>
-        <div class="tweet-actions">
-          <i class="far fa-comment"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="far fa-heart"></i>
-        </div>
-      </footer>
-    </article>
-  </div>
+  <div id="tweets-container"></div>
 </body>
 </html>
+

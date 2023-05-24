@@ -1,16 +1,16 @@
 $(document).ready(function() {
-  $("#tweet-text").on("input", function() {
-    let maxLength = 140;
-    let currentLength = $(this).val().length;
-    let remainingLength = maxLength - currentLength;
+  const maxChars = 140;
+  const counter = $('.counter');
+  const tweetText = $('#tweet-text');
 
-    let counterElement = $(this).siblings("div").find(".counter");
-    counterElement.text(remainingLength);
-
-    if (remainingLength <= 0) {
-      counterElement.addClass("invalid");
+  tweetText.on('input', function() {
+    const charsLeft = maxChars - tweetText.val().length;
+    counter.text(charsLeft);
+    
+    if (charsLeft <= 0) {
+      counter.css('color', 'red');
     } else {
-      counterElement.removeClass("invalid");
+      counter.css('color', '');
     }
   });
 });

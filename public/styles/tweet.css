@@ -19,15 +19,18 @@
 }
 
 .tweet header .tweet-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
   color: #53555c;
 }
 
 .tweet header .tweet-handle {
   color: #53555c;
-  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tweet .tweet-content {
@@ -69,3 +72,8 @@
 .tweet:hover .tweet-actions i:hover {
   color: #d18b00;
 }
+
+/* .tweet .Profile-Picture{
+  max-width: 50%;
+  max-height: 50%;
+} */
