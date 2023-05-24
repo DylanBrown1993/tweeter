@@ -35,3 +35,10 @@ section.new-tweet textarea {
   font-weight: bold;
 }
 
+#error-message {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+

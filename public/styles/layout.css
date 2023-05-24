@@ -43,4 +43,11 @@ body {
   color: red;
 }
 
+#error-container {
+  display: none;
+  color: red;
+  background-color: inherit;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
