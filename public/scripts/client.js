@@ -17,7 +17,7 @@ $(document).ready(function() {
           <p>${escape(tweet.content.text)}</p>
         </div>
         <footer>
-          <span class="tweet-timestamp" data-time="${tweet.created_at}">${formatTimestamp(tweet.created_at)}</span>
+          <span class="tweet-timestamp" data-time="${tweet.created_at}">${timeago().format(tweet.created_at)}</span>
           <div class="tweet-actions">
             <i class="far fa-comment"></i>
             <i class="fas fa-retweet"></i>
@@ -36,8 +36,8 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
       $tweetsContainer.append($tweet);
     }
-    // Render timeago after tweets are rendered
-    timeago.render($('.tweet-timestamp'));
+    // // Render timeago after tweets are rendered
+    // timeago.render($('.tweet-timestamp'));
   };
 
   const loadTweets = function() {
@@ -91,11 +91,5 @@ $(document).ready(function() {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  };
-
-  // Function to format timestamp using timeago
-  const formatTimestamp = function(timestamp) {
-    const date = new Date(timestamp);
-    return date.toISOString();
   };
 });

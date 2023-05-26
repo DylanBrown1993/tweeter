@@ -13,6 +13,8 @@ section.new-tweet div {
   position: relative; 
   border: #53555c;
   border-radius: 5px;
+  padding: 1.0em;
+
 }
  
 .counter {
@@ -24,6 +26,7 @@ section.new-tweet div {
 
 section.new-tweet form {
   background-color: inherit;
+  margin-top: 50px;
 }
 
 section.new-tweet textarea {
@@ -41,4 +44,6 @@ section.new-tweet textarea {
   font-size: 14px;
   margin-top: 10px;
 }
-
+.new-tweet {
+  margin-bottom: 1em;
+}

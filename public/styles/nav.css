@@ -2,14 +2,15 @@ nav {
   height: 120px;
   width: 100%;
   position: fixed;
-  background-color: #4056A1;
+  top: 0;
+  left: 0;
+  background-color: #107d0e;
   color: #FFFFFF;
   padding: 1.5em;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 nav .logo {
@@ -27,7 +28,6 @@ nav .icon-wrapper {
   margin: 0 auto;
   margin-top: 0.02em;
 }
-
 
 
 

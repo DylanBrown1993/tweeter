@@ -1,13 +1,13 @@
 .tweet {
   background-color: inherit;
-  display: inherit;
+  display: flex;
+  justify-content:flex-start;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
   border: 4px solid #53555c;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 60%;
+  color: #53555c;
 }
 
 .tweet header {
@@ -15,7 +15,6 @@
   align-items: center;
   justify-content: space-between; 
   margin-bottom: 10px;
-  color: #53555c;
 }
 
 .tweet header .tweet-author {
@@ -23,7 +22,7 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  color: #53555c;
+  color:#53555c
 }
 
 .tweet header .tweet-handle {
@@ -39,16 +38,11 @@
   font-weight: 600;
 }
 
-.tweet .tweet-content p {
-  margin: 0;
-  color: #53555c; 
-
-}
-
 .tweet footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  justify-content: end;
 }
 
 .tweet .tweet-timestamp {
@@ -59,6 +53,8 @@
   margin-right: 10px;
   color: #53555c; 
   cursor: pointer;
+  align-items: right;
+  align-items :baseline;
 }
 
 .tweet:hover {
@@ -73,7 +69,3 @@
   color: #d18b00;
 }
 
-/* .tweet .Profile-Picture{
-  max-width: 50%;
-  max-height: 50%;
-} */
