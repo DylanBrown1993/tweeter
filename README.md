@@ -1,18 +1,14 @@
-# Tweeter Project
+# Ribbiter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Ribbiter is a simple, single-page Twitter clone (but with FROGS 🐸)
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+![image](https://github.com/DylanBrown1993/tweeter/assets/128406806/75d1a6ad-f470-4c9c-9a32-cfa99f4fb36d)
+![image](https://github.com/DylanBrown1993/tweeter/assets/128406806/18f95cae-cbea-4a93-8368-a651f56e8618)
 
-## Getting Started
+## Table of Contents
+### 1. Intro
+### 2. Your information
+### 3. Writing a Ribbit 🐸
+### 4. Explanation of styling
+### 5. Explanation of code
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
-
-## Dependencies
-
-- Express
-- Node 5.10.x or above
