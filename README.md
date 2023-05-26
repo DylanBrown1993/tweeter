@@ -2,6 +2,12 @@
 
 Ribbiter is a simple, single-page Twitter clone (but with FROGS 🐸)
 
+![image](https://github.com/DylanBrown1993/tweeter/assets/128406806/ee52a337-388d-46f4-bb17-df33754a2032)
+
+![image](https://github.com/DylanBrown1993/tweeter/assets/128406806/725fafbf-262b-46a3-9a8e-5d8e66ac67f2)
+
+
+
 
 ## Table of Contents
 ### 1. Intro
