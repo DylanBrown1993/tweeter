@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src = "/scripts/composer-char-counter.js"></script>
+    <!-- Viewport -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Tweeter - Home Page</title>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span class="logo">🐸 RIBBITER</span>
+      <div class="right">
+        <span class="words">
+          <span class="logo-text"> Write a new ribbit </span>
+        </span> 
+          <i class="fa-solid fa-angles-down"></i>
+        </button>
+      </div>
+    </nav>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-
-  <!-- App CSS -->
-  <link rel="stylesheet" type="text/css" href="/styles/layout.css" />
-  <link rel="stylesheet" type="text/css" href="/styles/nav.css" />
-  <link rel="stylesheet" type="text/css" href="/styles/header.css" />
-  <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css" />
-  <link rel="stylesheet" type="text/css" href="/styles/tweet.css" />
-
-  <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/1.0.1/timeago.min.js" integrity="sha512-zC5StLNQA96X39rQ9VOYS338Qs7Xs9pzeORqKiJyCN25rE2pW6bzanGms1PTCcfESQBRru93CGSXdZX8rM5j4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/timeago.js"></script> -->
-
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-</head>
-
-<body>
-  <!-- Top nav bar -->
-  <nav>
-    <span class="logo">tweeter</span>
-    <span class="tweet-button">
-      <span class="tweet-text"><strong>Write </strong>a new tweet</span>
-      <span class="icon-wrapper">
-        <i class="fa-solid fa-angles-down" style="color: #ff8800;"></i>
-      </span>
-    </span>
-  </nav>
-  <header class="header">
-    <div>
-      <img src="/images/profile-hex.png" class="header-image">
-    </div>
-    <div>
-      <h2 class="header-text">Dylan Brown</h2>
+    <!-- Header -->
+    <div class="main-parent">
+    <header class="parent">
+      <div class="mini-parent">
+        <div class="avatar">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/050/984/small/frog-black-icon-in-circle-outline-vector.jpg"> 
+        </div>
+        <div class="avatarname">
+            <h2>Frog A. Toad</h2>
+        </div>
     </div>
   </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <form action="/tweets" method="POST" id="submit-tweet">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div>
-          <button type="submit" id="submit-tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-        <div id="error-container"></div>
-      </form>
-    </section>
-  </main>
-
-  <div id="tweets-container"></div>
-</body>
-
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>🐸Compose Ribbit🐸</h2>
+        <form action="/tweets" method="POST" id="submit-tweet">
+          <textarea name="text" id="tweet-text" placeholder="What are you ribbiting about?"></textarea>
+          <div class="characteristics">
+            <button type="submit" name="submit">Ribbit</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+          <div id="error-container"></div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
+  </div>
+  </body>
 </html>

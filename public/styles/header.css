@@ -1,23 +1,42 @@
-  .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 520px;
+.parent {
+  display:flex;
+  height: 610px;
+  width: 10%;
+  padding: 6em;
+  justify-content: center;
+}
+
+.mini-parent {
+  background-color: #1a6b2a;
+  background-image: url(http://www.transparenttextures.com/patterns/billie-holiday.png);
+  padding: 1.3em;
+}
+
+.avatarname {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.avatar {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Desktop Media Queries */
+@media (max-width: 1023px) {
+  .parent {
+    height:18em;
     width: 100%;
-    color: white;
-    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
-    background-color: #219617;
+    background-color:  #1a6b2a;
+    background-image: url(http://www.transparenttextures.com/patterns/billie-holiday.png);
   }
+}
 
-  .header-image {
-    width: 220px;
-    height: 220px;
-    margin-top: 1.7em;
+@media (min-width: 1024px) {
+  .main-parent {
+    display:flex;
   }
-
-  .header-text {
-    font-size: 2rem;
-  }
-
-
+}

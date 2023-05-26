@@ -1,71 +1,100 @@
 .tweet {
-  background-color: inherit;
-  display: flex;
-  justify-content:flex-start;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 4px solid #53555c;
-  width: 60%;
-  color: #53555c;
-}
-
-.tweet header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  margin-bottom: 10px;
-}
-
-.tweet header .tweet-author {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  color:#53555c
-}
-
-.tweet header .tweet-handle {
-  color: #53555c;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tweet .tweet-content {
-  margin-bottom: 10px;
-  color: #53555c; 
-  font-weight: 600;
-}
-
-.tweet footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: end;
-}
-
-.tweet .tweet-timestamp {
-  color: #53555c; 
-}
-
-.tweet .tweet-actions i {
-  margin-right: 10px;
-  color: #53555c; 
-  cursor: pointer;
-  align-items: right;
-  align-items :baseline;
-}
+  border: 4px solid #4a4d4c;
+  padding: 0.5em;
+  margin: 1em;
+} 
 
 .tweet:hover {
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0.3em 0.3em 0.3em rgb(0, 2, 0)
 }
 
-.tweet:hover .tweet-actions i {
-  color: #53555c;
+.image {
+  height: 70px;
+  width: 70px;
+  vertical-align: middle;
 }
 
-.tweet:hover .tweet-actions i:hover {
-  color: #d18b00;
+.handle {
+  font-size: 24px;
 }
 
+.name {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 24px;
+}
+
+footer {
+  display:flex;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet-line {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+  border-bottom: 3px solid #4a4d4c;
+  margin-bottom: 1.0em;
+}
+
+.tweet-words {
+  margin-bottom: 0;
+}
+
+.time {
+  display:flex;
+  align-items: flex-end;
+}
+
+.time-length {
+  margin-bottom: 10;
+}
+
+.icons {
+  display:flex;
+  align-items: flex-end;
+}
+
+.heart {
+  padding: 0.3em;
+}
+
+.retweet {
+  padding: 0.3em;
+}
+
+.flag {
+  padding: 0.3em;
+}
+
+.heart:hover {
+  color: rgb(82, 218, 32);
+}
+
+.retweet:hover {
+  color: rgb(82, 218, 32);
+}
+
+.flag:hover {
+  color: rgb(82, 218, 32);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 35px;
+}
+/* Desktop Media Queries */
+@media (min-width: 1024px) {
+  #tweets-container {
+    margin-top: -10px;
+  }
+};

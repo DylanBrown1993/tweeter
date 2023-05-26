@@ -1,95 +1,120 @@
+/*
+ * Client-side JS logic goes here
+ * jQuery is already loaded
+ * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ */
+
+/* Function for generating the tweets */
+const createTweetElement = function(tweet) {
+  const $tweetTime = timeago.format(tweet.created_at);
+  const $tweet = $(
+    `<article class="tweet">
+    <header>
+      <div class="top-left">
+        <span class="image">
+          <img src="${tweet.user.avatars}" alt="user-avatar" />
+        </span>
+        <span class = "username">
+          ${tweet.user.name}
+        </span>
+      </div>
+      <div class="handle">
+        <h2>${tweet.user.handle}</h2>
+      </div>
+    </header>
+    <div class="tweet-line">
+      <h4 class="tweet-words">${escape(tweet.content.text)}</h4>
+    </div>
+    <footer>
+      <div class="bottom">
+      <span class="time">
+        <h6 class="time-length">${$tweetTime}</h6>
+      </span>
+        <span class="icons">
+          <span class="heart">
+            <i class="fa-solid fa-heart"></i>
+          </span>
+          <span class="retweet">
+            <i class="fa-solid fa-retweet"></i>
+          </span>
+          <span class="flag">
+            <i class="fa-solid fa-flag"></i>
+          </span>
+        </span>
+      </div>
+    </footer>
+  </article>`
+  );
+  return $tweet
+};
+
+/* Rendering existing tweets to display on the timeline */
+const renderTweets = function(tweets) {
+  const $tweetsContainer = $('#tweets-container');
+  $tweetsContainer.empty();
+  for (const tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
+    $tweetsContainer.prepend($tweet);
+  }
+};
+
+/* Sends an AJAX request to /tweets, which if successfulls calls renderTweets */
+function loadTweets () {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    success: function (data){
+      renderTweets(data);
+    }
+  })
+}
+
+/* Validates the tweet length and returns an appropriate error message */
+const validation = function(tweet) {
+  const $errorContainer = $("#error-container");
+  if (tweet.length > 140) {
+    const errorMessage = "🐸Too many ribbits...err, letters🐸";
+    $errorContainer.text(errorMessage).slideDown();
+    return false;
+  } 
+  if (!tweet) {
+    const errorMessage = "🐸Ribbit Ribbit, please write a ribbit🐸";
+    $errorContainer.text(errorMessage).slideDown();
+    return false;
+  }
+  return true;
+};
+
+/* Sends an AJAX request to /tweets, which if successful loads all tweets, clears the form, and resets the counter */
+const submitTweet = function(tweet) {
+  $.post("/tweets", tweet)
+  .then(function () {
+    loadTweets();
+    $("textarea").val("");
+    $(".counter").text("140");
+  })
+}
+
+/* Prevents potential errors from certain characters and code in tweets */
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+/* Sets up an event listener for the form submission, retrieves the tweet content, performs validation, and then submits the tweet data.  */
 $(document).ready(function() {
-  const createTweetElement = function(tweet) {
-    const $tweet = $(`
-      <article class="tweet">
-        <header>
-          <img src="${escape(tweet.user.avatars)}" alt="User Avatar">
-          <div class="tweet-header-content">
-            <div>
-              <h3 class="tweet-author">${escape(tweet.user.name)}</h3>
-            </div>
-            <div>
-              <span class="tweet-handle">${escape(tweet.user.handle)}</span>
-            </div>
-          </div>
-        </header>
-        <div class="tweet-content">
-          <p>${escape(tweet.content.text)}</p>
-        </div>
-        <footer>
-          <span class="tweet-timestamp" data-time="${tweet.created_at}">${timeago().format(tweet.created_at)}</span>
-          <div class="tweet-actions">
-            <i class="far fa-comment"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-    `);
-    return $tweet;
+
+loadTweets();
+
+$("form").on("submit", function(event) {
+  event.preventDefault();
+  const tweet = $("textarea").val();
+  const $errorContainer = $("#error-container");
+  $errorContainer.hide();
+  if(validation(tweet)) {
+    const Formdata = $(this).serialize();
+    submitTweet(Formdata);
   };
-
-  const renderTweets = function(tweets) {
-    const $tweetsContainer = $('#tweets-container');
-    $tweetsContainer.empty();
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $tweetsContainer.append($tweet);
-    }
-    // // Render timeago after tweets are rendered
-    // timeago.render($('.tweet-timestamp'));
-  };
-
-  const loadTweets = function() {
-    $.getJSON("/tweets")
-      .then(function(data) {
-        renderTweets(data);
-      });
-  };
-
-  const submitTweet = function(tweetText) {
-    $.post("/tweets", { text: tweetText })
-      .then(function() {
-        loadTweets();
-      });
-  };
-
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-
-    const tweetText = $("#tweet-text").val();
-    const $errorContainer = $("#error-container");
-
-    // Hide error message
-    $errorContainer.hide();
-
-    // Perform validation checks
-    if (!tweetText) {
-      const errorMessage = "Error: You gotta write a tweet!";
-      $errorContainer.text(errorMessage).slideDown();
-      return;
-    }
-
-    if (tweetText.length > 140) {
-      const errorMessage = "Error: Too many letters, put less letters.";
-      $errorContainer.text(errorMessage).slideDown();
-      return;
-    }
-
-    // Validation passed, submit the tweet
-    submitTweet(tweetText);
-
-    // Reset the form after submitting
-    $(this).trigger("reset");
-  });
-
-  // Load tweets on initial page load
-  loadTweets();
-
-  // Function to escape special characters in HTML
-  const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+});
 });
