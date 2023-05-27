@@ -15,6 +15,8 @@ Ribbiter is a simple, single-page Twitter clone (but with FROGS 🐸)
 ### 3. Writing a Ribbit 🐸
 ### 4. Explanation of styling
 ### 5. Explanation of code
+### 6. Setup Instructions
+### 7. Dependencies
 
 
 ## Intro
@@ -55,4 +57,16 @@ The main functionalities of the code include generating and rendering Ribbits, v
 To ensure valid tweet content, the validation function checks the length of the Ribbit and displays appropriate error messages if it exceeds the character limit or if it is empty. The submitTweet function sends the tweet data to the server using an AJAX POST request, and upon success, it reloads the Ribbits, clears the form, and resets the character counter.
 
 Additionally, the code includes an escape function to prevent potential issues with special characters in tweets by performing HTML encoding on the Ribbit content.
+
+## Setup Instructions
+
+Create a new repository using this repository as a template.
+Clone your repository onto your local device.
+Install dependencies using the npm install command.
+Start the web server using the npm run local command. The app will be served at http://localhost:8080/.
+Go to http://localhost:8080/ in your browser.
+
+## Dependencies
+Express
+Node 5.10.x or above
 
